@@ -39,3 +39,26 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def search_book():
+    keyword = input("\nEnter the book name or book code you want to find: ").lower()
+    results = []
+    
+    for book in library:
+        if keyword in book['title'].lower() or keyword in book['id'].lower():
+            results.append(book)
+            
+    if results:
+        print(f"--> Find {len(results)} result:")
+        for book in results:
+            print(f"Code: {book['id']} - Name: {book['title']} - Author: {book['author']}")
+    else:
+        print("--> No books found!")
+
+def main():
+    add_book()
+    view_books()
+    search_book()
+
+if __name__ == "__main__":
+    main()
