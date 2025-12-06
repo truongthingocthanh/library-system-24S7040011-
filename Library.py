@@ -24,3 +24,18 @@ def main():
     add_book() 
 if __name__ == "__main__":
     main()
+
+def view_books():
+    print("\n--- List of books in the library ---")
+    if not library:
+        print("The library currently has no books.")
+    else:
+        for book in library:
+            print(f"Code: {book['id']} - Name: {book['title']} - Author: {book['author']}")
+
+def main():
+    add_book()
+    view_books()
+
+if __name__ == "__main__":
+    main()
